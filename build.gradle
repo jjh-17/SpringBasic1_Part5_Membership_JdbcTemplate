@@ -1,0 +1,27 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '3.0.2'
+	id 'io.spring.dependency-management' version '1.1.0'
+}
+
+group = 'spring_basic'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '17'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+	//jdbc, h2 데이터베이스
+	implementation 'org.springframework.boot:spring-boot-starter-jdbc' //jdbc 라이브러리
+	runtimeOnly 'com.h2database:h2' //h2 데이터베이스 라이브러리
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
